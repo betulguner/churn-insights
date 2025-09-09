@@ -194,14 +194,14 @@ python bigquery_integration.py
 
 - **URL**: http://localhost:8080
 - **Email**: admin@churn.com
-- **Password**: admin123
+- **Password**: [Your pgAdmin Password]
 
 **Bağlantı Ayarları:**
 - Host: `localhost`
 - Port: `5433`
 - Database: `churn_analysis`
 - Username: `churn_user`
-- Password: `churn_password`
+- Password: `[Your Database Password]`
 
 ### ☁️ BigQuery Console
 
@@ -303,8 +303,6 @@ ORDER BY month;
 
 ## 🤝 Katkıda Bulunma
 
-Bu proje açık kaynaklıdır ve katkılarınızı memnuniyetle karşılıyoruz!
-
 ### 🚀 Nasıl Katkıda Bulunabilirsiniz?
 
 1. **Fork** yapın
@@ -332,8 +330,8 @@ Bu proje [MIT License](LICENSE) altında lisanslanmıştır.
 **Proje Sahibi**: Betül Güner
 
 [![GitHub](https://img.shields.io/badge/GitHub-@betulguner-181717?style=for-the-badge&logo=github)](https://github.com/betulguner)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Betül_Güner-0077B5?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/betulguner)
-[![Email](https://img.shields.io/badge/Email-Contact_Me-D14836?style=for-the-badge&logo=gmail)](mailto:betulguner@example.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Betül_Güner-0077B5?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/betül-güner-867719219)
+[![Email](https://img.shields.io/badge/Email-Contact_Me-D14836?style=for-the-badge&logo=gmail)](mailto:gunerbetul14@gmail.com)
 
 </div>
 
@@ -352,6 +350,3 @@ Bu projeyi beğendiyseniz, ⭐ yıldız vermeyi unutmayın!
 *"Data is the new oil, but AI is the refinery."* 🚀
 
 </div>
-=======
-# churn-insights
->>>>>>> 35a4ca8c194e85e116035f084e36753bc908b907
