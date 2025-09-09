@@ -193,14 +193,14 @@ python bigquery_integration.py
 
 - **URL**: http://localhost:8080
 - **Email**: admin@churn.com
-- **Password**: [Your pgAdmin Password]
+- **Password**: Your pgAdmin Password
 
 **Bağlantı Ayarları:**
 - Host: `localhost`
 - Port: `5433`
 - Database: `churn_analysis`
 - Username: `churn_user`
-- Password: `[Your Database Password]`
+- Password: `Your Database Password`
 
 ### ☁️ BigQuery Console
 
@@ -315,13 +315,6 @@ ORDER BY month;
 Bir hata bulduysanız, lütfen [Issues](https://github.com/betulguner/churn-insights/issues) bölümünden bildirin.
 
 ---
-
-## 📄 Lisans
-
-Bu proje [MIT License](LICENSE) altında lisanslanmıştır.
-
----
-
 ## 👥 İletişim & Destek
 
 <div align="center">
@@ -338,6 +331,6 @@ Bu proje [MIT License](LICENSE) altında lisanslanmıştır.
 
 ## 🌟 Yıldız Verin!
 
-Bu projeyi beğendiyseniz, ⭐ yıldız vermeyi unutmayın!
+Bu projeyi beğendiyseniz, ⭐ yıldız vermeyi unutmayınn 🙃
 
 ---
