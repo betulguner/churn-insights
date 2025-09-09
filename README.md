@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # 🚀 AI-Driven Customer Insights Platform
 
 <div align="center">
@@ -342,11 +341,3 @@ Bu proje [MIT License](LICENSE) altında lisanslanmıştır.
 Bu projeyi beğendiyseniz, ⭐ yıldız vermeyi unutmayın!
 
 ---
-
-<div align="center">
-
-**Bu proje, Data Analyst, Data Engineer, ML Engineer ve BI Developer rollerinde güçlü bir referans olarak tasarlanmıştır.**
-
-*"Data is the new oil, but AI is the refinery."* 🚀
-
-</div>
