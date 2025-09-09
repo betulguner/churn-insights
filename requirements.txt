@@ -1,0 +1,41 @@
+# AI-Driven Customer Insights Platform - Requirements
+# Core Data Processing
+pandas==2.3.2
+numpy==2.3.2
+scikit-learn==1.7.1
+
+# Database Connectivity
+psycopg2-binary==2.9.10
+sqlalchemy==2.0.43
+
+# Machine Learning & AI (will be added in Week 3)
+# langchain==0.3.7
+# openai==1.54.4
+# chromadb==0.5.3
+
+# Data Visualization
+matplotlib==3.9.2
+seaborn==0.13.2
+plotly==5.24.1
+
+# Web Framework (for API)
+fastapi==0.115.6
+uvicorn==0.32.1
+pydantic==2.10.3
+
+# Utilities
+python-dotenv==1.0.1
+requests==2.32.3
+python-dateutil==2.9.0
+prefect==3.0.4
+PyYAML==6.0.2
+
+# Development & Testing
+pytest==8.3.4
+black==24.10.0
+flake8==7.1.1
+
+# Cloud & Deployment
+google-cloud-bigquery==3.36.0
+google-cloud-storage==3.3.1
+docker==7.1.0
