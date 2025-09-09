@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🚀 AI-Driven Customer Insights Platform
 
 <div align="center">
@@ -351,3 +352,6 @@ Bu projeyi beğendiyseniz, ⭐ yıldız vermeyi unutmayın!
 *"Data is the new oil, but AI is the refinery."* 🚀
 
 </div>
+=======
+# churn-insights
+>>>>>>> 35a4ca8c194e85e116035f084e36753bc908b907
