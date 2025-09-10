@@ -348,7 +348,7 @@ def main():
         'password': os.getenv('POSTGRES_PASSWORD', os.getenv('LOCAL_PG_PASSWORD', '')),
     }
     
-    schema_file_path = 'bigquery_schema.sql'
+    schema_file_path = 'bigquery/bigquery_schema.sql'
     
     # Initialize and run BigQuery integration
     bq_integration = BigQueryIntegration(project_id, dataset_id, postgres_config)
