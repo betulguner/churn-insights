@@ -1,0 +1,6 @@
+segment_name,customer_count,avg_cltv,avg_monthly_charges,avg_total_charges,avg_tenure,churned_count,churn_rate,avg_risk_score
+High Value Loyal,1139,4964.13,80.49,4959.75,60.9,56,4.92,6.91
+Medium Value Stable,1546,2907.66,60.85,2912.77,49.2,157,10.16,18.87
+Standard,1695,2048.74,57.93,2046.15,31.7,361,21.3,32.45
+High Risk,1641,1370.95,79.93,1372.1,14.9,979,59.66,73.77
+New Customers,1022,179.41,40.1,180.05,4.3,316,30.92,51.62
