@@ -215,8 +215,12 @@ python bigquery_integration.py
 - **İçerik**: Customer Overview, Churn Trends, CLTV Analysis, Segment Performance
 - **Durum**: Public olarak erişilebilir
 
-#### Tableau Public Dashboard (🚧 Geliştiriliyor)
-- **Durum**: Yakında eklenecek
+#### Tableau Public Dashboards (✅ Live)
+- **Dashboard 1 - Customer Overview**: [https://public.tableau.com/app/profile/bet.l.g.ner/viz/CustomerOverview_17578623282720/Dashboard1](https://public.tableau.com/app/profile/bet.l.g.ner/viz/CustomerOverview_17578623282720/Dashboard1)
+- **Dashboard 2 - Churn Analysis**: [https://public.tableau.com/app/profile/bet.l.g.ner/viz/ChurnAnalysis_17578709731160/ChurnAnalysis](https://public.tableau.com/app/profile/bet.l.g.ner/viz/ChurnAnalysis_17578709731160/ChurnAnalysis)
+- **Dashboard 3 - Service Distribution**: [https://public.tableau.com/app/profile/bet.l.g.ner/viz/ServiceDistribution_17578709030110/ServiceDalm](https://public.tableau.com/app/profile/bet.l.g.ner/viz/ServiceDistribution_17578709030110/ServiceDalm)
+- **Dashboard 4 - Contract & Payment Distribution**: [https://public.tableau.com/app/profile/bet.l.g.ner/viz/ContractPaymentDistribution/ContractPaymentDalm](https://public.tableau.com/app/profile/bet.l.g.ner/viz/ContractPaymentDistribution/ContractPaymentDalm)
+- **Tüm Dashboard'lar**: [https://public.tableau.com/app/profile/bet.l.g.ner/vizzes](https://public.tableau.com/app/profile/bet.l.g.ner/vizzes)
 
 ### 📝 Örnek SQL Sorguları
 
@@ -275,7 +279,7 @@ ORDER BY month;
 - **GitHub Actions** (CI/CD - gelecek)
 
 ### 📊 Analytics & BI
-- **Tableau** (Dashboard - gelecek)
+- **Tableau** (Dashboard - ✅ Tamamlandı)
 - **PowerBI** (Dashboard - ✅ Tamamlandı)
 - **scikit-learn** (ML modelleri - gelecek)
 
@@ -304,7 +308,7 @@ ORDER BY month;
 ### 📋 Planlanan (Hafta 3-4)
 - [ ] RAG tabanlı AI Chatbot
 - [x] PowerBI dashboard'ları (✅ Tamamlandı)
-- [ ] Tableau Public dashboard'ları
+- [x] Tableau Public dashboard'ları (✅ Tamamlandı)
 - [ ] CI/CD pipeline (GitHub Actions)
 - [ ] Google Cloud Run deployment
 - [ ] API endpoints (FastAPI)
