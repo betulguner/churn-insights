@@ -208,6 +208,16 @@ python bigquery_integration.py
 - **Dataset**: `churn_analysis`
 - **Tablolar**: 9 ana tablo + 4 analitik view
 
+### 📊 BI Dashboards
+
+#### PowerBI Dashboard (✅ Live)
+- **Public Link**: [https://app.powerbi.com/groups/me/reports/218da576-1926-4dba-bc2e-5cd1e522fae1?ctid=906d7df8-0a7e-4b9f-b09b-1dcf35d5ab95&pbi_source=linkShare](https://app.powerbi.com/groups/me/reports/218da576-1926-4dba-bc2e-5cd1e522fae1?ctid=906d7df8-0a7e-4b9f-b09b-1dcf35d5ab95&pbi_source=linkShare)
+- **İçerik**: Customer Overview, Churn Trends, CLTV Analysis, Segment Performance
+- **Durum**: Public olarak erişilebilir
+
+#### Tableau Public Dashboard (🚧 Geliştiriliyor)
+- **Durum**: Yakında eklenecek
+
 ### 📝 Örnek SQL Sorguları
 
 #### Churn Oranı Analizi
@@ -266,7 +276,7 @@ ORDER BY month;
 
 ### 📊 Analytics & BI
 - **Tableau** (Dashboard - gelecek)
-- **PowerBI** (Dashboard - gelecek)
+- **PowerBI** (Dashboard - ✅ Tamamlandı)
 - **scikit-learn** (ML modelleri - gelecek)
 
 ### 🤖 AI & LLM
@@ -293,7 +303,8 @@ ORDER BY month;
 
 ### 📋 Planlanan (Hafta 3-4)
 - [ ] RAG tabanlı AI Chatbot
-- [ ] Tableau & PowerBI dashboard'ları
+- [x] PowerBI dashboard'ları (✅ Tamamlandı)
+- [ ] Tableau Public dashboard'ları
 - [ ] CI/CD pipeline (GitHub Actions)
 - [ ] Google Cloud Run deployment
 - [ ] API endpoints (FastAPI)
