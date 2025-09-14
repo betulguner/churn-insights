@@ -8,10 +8,11 @@ scikit-learn==1.7.1
 psycopg2-binary==2.9.10
 sqlalchemy==2.0.43
 
-# Machine Learning & AI (will be added in Week 3)
-# langchain==0.3.7
-# openai==1.54.4
-# chromadb==0.5.3
+# Machine Learning & AI (Week 3 - RAG Chatbot)
+langchain==0.3.7
+langchain-openai==0.2.8
+openai==1.54.4
+streamlit==1.39.0
 
 # Data Visualization
 matplotlib==3.9.2
