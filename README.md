@@ -6,6 +6,8 @@
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15+-blue?style=for-the-badge&logo=postgresql&logoColor=white)
 ![BigQuery](https://img.shields.io/badge/BigQuery-Google_Cloud-orange?style=for-the-badge&logo=google-cloud&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-Containerized-blue?style=for-the-badge&logo=docker&logoColor=white)
+![PowerBI](https://img.shields.io/badge/PowerBI-Dashboard-yellow?style=for-the-badge&logo=power-bi&logoColor=white)
+![Tableau](https://img.shields.io/badge/Tableau-Public-orange?style=for-the-badge&logo=tableau&logoColor=white)
 
 **Yapay Zeka Destekli Müşteri Analiz ve Tahmin Platformu**
 
@@ -216,10 +218,10 @@ python bigquery_integration.py
 - **Durum**: Public olarak erişilebilir
 
 #### Tableau Public Dashboards (✅ Live)
-- **Dashboard 1 - Customer Overview**: [https://public.tableau.com/app/profile/bet.l.g.ner/viz/CustomerOverview_17578623282720/Dashboard1](https://public.tableau.com/app/profile/bet.l.g.ner/viz/CustomerOverview_17578623282720/Dashboard1)
-- **Dashboard 2 - Churn Analysis**: [https://public.tableau.com/app/profile/bet.l.g.ner/viz/ChurnAnalysis_17578709731160/ChurnAnalysis](https://public.tableau.com/app/profile/bet.l.g.ner/viz/ChurnAnalysis_17578709731160/ChurnAnalysis)
-- **Dashboard 3 - Service Distribution**: [https://public.tableau.com/app/profile/bet.l.g.ner/viz/ServiceDistribution_17578709030110/ServiceDalm](https://public.tableau.com/app/profile/bet.l.g.ner/viz/ServiceDistribution_17578709030110/ServiceDalm)
-- **Dashboard 4 - Contract & Payment Distribution**: [https://public.tableau.com/app/profile/bet.l.g.ner/viz/ContractPaymentDistribution/ContractPaymentDalm](https://public.tableau.com/app/profile/bet.l.g.ner/viz/ContractPaymentDistribution/ContractPaymentDalm)
+- **Customer Overview**: [https://public.tableau.com/app/profile/bet.l.g.ner/viz/CustomerOverview_17578623282720/Dashboard1](https://public.tableau.com/app/profile/bet.l.g.ner/viz/CustomerOverview_17578623282720/Dashboard1)
+- **Churn Analysis**: [https://public.tableau.com/app/profile/bet.l.g.ner/viz/ChurnAnalysis_17578709731160/ChurnAnalysis](https://public.tableau.com/app/profile/bet.l.g.ner/viz/ChurnAnalysis_17578709731160/ChurnAnalysis)
+- **Service Distribution**: [https://public.tableau.com/app/profile/bet.l.g.ner/viz/ServiceDistribution_17578709030110/ServiceDalm](https://public.tableau.com/app/profile/bet.l.g.ner/viz/ServiceDistribution_17578709030110/ServiceDalm)
+- **Contract & Payment Distribution**: [https://public.tableau.com/app/profile/bet.l.g.ner/viz/ContractPaymentDistribution/ContractPaymentDalm](https://public.tableau.com/app/profile/bet.l.g.ner/viz/ContractPaymentDistribution/ContractPaymentDalm)
 - **Tüm Dashboard'lar**: [https://public.tableau.com/app/profile/bet.l.g.ner/vizzes](https://public.tableau.com/app/profile/bet.l.g.ner/vizzes)
 
 ### 📝 Örnek SQL Sorguları
