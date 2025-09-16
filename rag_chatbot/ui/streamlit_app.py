@@ -61,10 +61,10 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 @st.cache_resource
-def initialize_rag_pipeline():
+def initialize_rag_pipeline(use_ollama=False):
     """Initialize RAG pipeline with caching"""
     try:
-        return RAGPipeline()
+        return RAGPipeline(use_ollama=use_ollama)
     except Exception as e:
         st.error(f"Failed to initialize RAG pipeline: {e}")
         return None
@@ -231,10 +231,15 @@ def main():
     with st.sidebar:
         st.header("🎛️ Navigation")
         
-        # Check API key
+        # Check API key and offer Ollama option
         if not os.getenv('OPENAI_API_KEY'):
-            st.error("⚠️ OpenAI API key not found. Please set OPENAI_API_KEY environment variable.")
-            st.stop()
+            st.warning("⚠️ OpenAI API key not found.")
+            use_ollama = st.checkbox("🦙 Use Ollama (Free Local LLM)", value=True)
+            if not use_ollama:
+                st.error("Please set OPENAI_API_KEY environment variable or enable Ollama.")
+                st.stop()
+        else:
+            use_ollama = st.checkbox("🦙 Use Ollama (Free Local LLM)", value=False)
         
         # Navigation
         page = st.selectbox(
@@ -255,7 +260,7 @@ def main():
         """)
     
     # Initialize RAG pipeline
-    pipeline = initialize_rag_pipeline()
+    pipeline = initialize_rag_pipeline(use_ollama=use_ollama)
     
     if pipeline is None:
         st.error("Failed to initialize the chatbot. Please check your configuration.")

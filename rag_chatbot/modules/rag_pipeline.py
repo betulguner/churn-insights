@@ -9,6 +9,7 @@ from typing import Dict, Any, List, Optional
 import pandas as pd
 from langchain_openai import ChatOpenAI
 from langchain.schema import HumanMessage, SystemMessage
+import ollama
 
 from .bigquery_client import BigQueryClient
 from .prompt_templates import PromptTemplates
@@ -20,29 +21,67 @@ logger = logging.getLogger(__name__)
 class RAGPipeline:
     """RAG Pipeline for processing natural language questions about customer churn"""
     
-    def __init__(self, openai_api_key: str = None):
+    def __init__(self, openai_api_key: str = None, use_ollama: bool = False):
         """
         Initialize RAG Pipeline
         
         Args:
             openai_api_key: OpenAI API key (optional, can use environment variable)
+            use_ollama: If True, use Ollama instead of OpenAI
         """
         self.openai_api_key = openai_api_key or os.getenv('OPENAI_API_KEY')
-        
-        if not self.openai_api_key:
-            raise ValueError("OpenAI API key is required. Set OPENAI_API_KEY environment variable or pass it directly.")
+        self.use_ollama = use_ollama
         
         # Initialize components
         self.bigquery_client = BigQueryClient()
         self.prompt_templates = PromptTemplates()
-        self.llm = ChatOpenAI(
-            api_key=self.openai_api_key,
-            model="gpt-3.5-turbo",
-            temperature=0.1,  # Low temperature for consistent SQL generation
-            max_tokens=1000
-        )
         
-        logger.info("RAG Pipeline initialized successfully")
+        if self.use_ollama:
+            self.llm = None  # Ollama doesn't use LangChain ChatOpenAI
+            logger.info("RAG Pipeline initialized with Ollama")
+        else:
+            if not self.openai_api_key:
+                raise ValueError("OpenAI API key is required. Set OPENAI_API_KEY environment variable or pass it directly.")
+            
+            self.llm = ChatOpenAI(
+                api_key=self.openai_api_key,
+                model="gpt-3.5-turbo",
+                temperature=0.1,  # Low temperature for consistent SQL generation
+                max_tokens=1000
+            )
+            logger.info("RAG Pipeline initialized with OpenAI")
+    
+    def _call_ollama(self, prompt: str, system_prompt: str = None) -> str:
+        """
+        Call Ollama model
+        
+        Args:
+            prompt: User prompt
+            system_prompt: System prompt (optional)
+            
+        Returns:
+            str: Model response
+        """
+        try:
+            messages = []
+            if system_prompt:
+                messages.append({"role": "system", "content": system_prompt})
+            messages.append({"role": "user", "content": prompt})
+            
+            response = ollama.chat(
+                model="llama3.1:8b",
+                messages=messages,
+                options={
+                    "temperature": 0.1,
+                    "num_predict": 1000
+                }
+            )
+            
+            return response['message']['content'].strip()
+            
+        except Exception as e:
+            logger.error(f"Ollama call failed: {e}")
+            raise
     
     def classify_question(self, question: str) -> str:
         """
@@ -55,15 +94,20 @@ class RAGPipeline:
             str: Question category
         """
         try:
-            prompt = self.prompt_templates.get_question_classification_prompt(question)
-            
-            messages = [
-                SystemMessage(content="You are a question classification expert. Return only the category name."),
-                HumanMessage(content=prompt)
-            ]
-            
-            response = self.llm.invoke(messages)
-            category = response.content.strip()
+            if self.use_ollama:
+                prompt = self.prompt_templates.get_question_classification_prompt(question)
+                system_prompt = "You are a question classification expert. Return only the category name."
+                category = self._call_ollama(prompt, system_prompt)
+            else:
+                prompt = self.prompt_templates.get_question_classification_prompt(question)
+                
+                messages = [
+                    SystemMessage(content="You are a question classification expert. Return only the category name."),
+                    HumanMessage(content=prompt)
+                ]
+                
+                response = self.llm.invoke(messages)
+                category = response.content.strip()
             
             logger.info(f"Question classified as: {category}")
             return category
@@ -83,15 +127,20 @@ class RAGPipeline:
             str: Generated SQL query
         """
         try:
-            prompt = self.prompt_templates.get_sql_generation_prompt(question)
-            
-            messages = [
-                SystemMessage(content="You are a SQL expert. Return only the SQL query without any explanations."),
-                HumanMessage(content=prompt)
-            ]
-            
-            response = self.llm.invoke(messages)
-            sql_query = response.content.strip()
+            if self.use_ollama:
+                prompt = self.prompt_templates.get_sql_generation_prompt(question)
+                system_prompt = "You are a SQL expert. Return only the SQL query without any explanations."
+                sql_query = self._call_ollama(prompt, system_prompt)
+            else:
+                prompt = self.prompt_templates.get_sql_generation_prompt(question)
+                
+                messages = [
+                    SystemMessage(content="You are a SQL expert. Return only the SQL query without any explanations."),
+                    HumanMessage(content=prompt)
+                ]
+                
+                response = self.llm.invoke(messages)
+                sql_query = response.content.strip()
             
             # Clean up the SQL query (remove markdown formatting if present)
             if sql_query.startswith("```sql"):
@@ -147,13 +196,17 @@ class RAGPipeline:
                 query_results=results_str
             )
             
-            messages = [
-                SystemMessage(content="You are a data analyst providing business insights. Be concise and actionable."),
-                HumanMessage(content=prompt)
-            ]
-            
-            response = self.llm.invoke(messages)
-            formatted_response = response.content.strip()
+            if self.use_ollama:
+                system_prompt = "You are a data analyst providing business insights. Be concise and actionable."
+                formatted_response = self._call_ollama(prompt, system_prompt)
+            else:
+                messages = [
+                    SystemMessage(content="You are a data analyst providing business insights. Be concise and actionable."),
+                    HumanMessage(content=prompt)
+                ]
+                
+                response = self.llm.invoke(messages)
+                formatted_response = response.content.strip()
             
             logger.info("Response formatted successfully")
             return formatted_response

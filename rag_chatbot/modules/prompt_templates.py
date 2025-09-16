@@ -21,24 +21,24 @@ You are a SQL expert specializing in customer churn analysis.
 Convert the user's natural language question into a SQL query for BigQuery.
 
 Database Schema:
-- customer_complete_view: Main customer data view
-- customer_segments: Customer segmentation data
-- customer_churn: Churn status and predictions
-- customer_billing: Billing and payment information
+- churn-471614.churn_analysis.customer_complete_view: Main customer data view
+- churn-471614.churn_analysis.customer_segments: Customer segmentation data
+- churn-471614.churn_analysis.customer_churn: Churn status and predictions
+- churn-471614.churn_analysis.customer_billing: Billing and payment information
 
 Available Tables and Key Fields:
-1. customer_complete_view:
+1. churn-471614.churn_analysis.customer_complete_view:
    - customer_id, gender, senior_citizen, partner, dependents
-   - tenure_months, phone_service, internet_service, contract
-   - monthly_charges, total_charges, churn_status, segment_name
+   - tenure_months, phone_service, internet_service, contract_type
+   - monthly_charges, total_charges, churn_status, segment_name, cltv_score, risk_score
 
-2. customer_segments:
+2. churn-471614.churn_analysis.customer_segments:
    - customer_id, segment_name, cltv_score, risk_level
 
-3. customer_churn:
+3. churn-471614.churn_analysis.customer_churn:
    - customer_id, churn_status, churn_reason, created_at
 
-4. customer_billing:
+4. churn-471614.churn_analysis.customer_billing:
    - customer_id, monthly_charges, total_charges, payment_method
 
 Common Question Patterns:
