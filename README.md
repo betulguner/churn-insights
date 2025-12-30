@@ -71,14 +71,38 @@ churn-insights/
 ├── 🐍 scripts/                   # Python scriptleri
 │   ├── etl_pipeline.py          # ETL süreci (Extract-Transform-Load)
 │   └── test_bigquery.py         # BigQuery bağlantı testleri
-├── 📚 docs/                      # Dokümantasyon
-│   └── ETL_FLOW_DESIGN.md       # ETL süreç tasarımı
-├── 🧪 tests/                     # Test dosyaları
-├── 📊 data/                      # Veri dosyaları
-│   └── WA_Fn-UseC_-Telco-Customer-Churn.csv
-├── ⚙️ .env                       # Environment variables
-├── 📋 requirements.txt           # Python dependencies
-└── 📖 README.md                  # Bu dosya
+├── 📊 analytics/                 # ML modelleri ve analizler
+│   ├── churn_analysis.py        # Churn analizi modülü
+│   ├── churn_prediction.py      # Churn tahmin modelleri
+│   ├── cltv_analysis.py         # CLTV analizi
+│   ├── customer_segmentation.py # Müşteri segmentasyonu (KMeans)
+│   ├── models/                  # Eğitilmiş ML modelleri
+│   ├── plots/                   # Analiz görselleştirmeleri
+│   ├── reports/                 # Analiz raporları
+│   └── run_*.py                 # Analiz çalıştırma scriptleri
+├── 🤖 rag_chatbot/              # AI Chatbot (RAG sistemi)
+│   ├── modules/                 # RAG pipeline modülleri
+│   │   ├── bigquery_client.py  # BigQuery veri erişimi
+│   │   ├── prompt_templates.py  # Prompt şablonları
+│   │   └── rag_pipeline.py      # RAG pipeline implementasyonu
+│   ├── ui/                      # Streamlit UI
+│   │   └── streamlit_app.py    # Chatbot arayüzü
+│   └── test_scenarios.py       # Test senaryoları
+├── 🔄 workflows/                # Prefect workflow'ları
+│   └── etl_workflow.py         # Otomatik ETL orchestration
+├── 📤 powerbi_service_exports/  # PowerBI export dosyaları
+│   └── *.csv                    # Dashboard veri setleri
+├── 📤 tableau_exports/          # Tableau export dosyaları
+│   └── *.csv                   # Dashboard veri setleri
+├── 📚 docs/                     # Dokümantasyon
+│   └── ETL_FLOW_DESIGN.md      # ETL süreç tasarımı
+├── 🧪 tests/                    # Test dosyaları
+├── ⚙️ .env                      # Environment variables
+├── 📄 env.example               # Environment variables şablonu
+├── 📋 requirements.txt          # Python dependencies
+├── 📖 README.md                 # Bu dosya
+├── 📖 dashboard_design_guide.md  # Dashboard tasarım rehberi
+└── 📊 WA_Fn-UseC_-Telco-Customer-Churn.csv  # Veri dosyası
 ```
 
 ---
@@ -273,7 +297,7 @@ ORDER BY month;
 - **Python 3.13+** (Ana programlama dili)
 - **pandas** (Veri işleme)
 - **SQLAlchemy** (ORM)
-- **Prefect** (Workflow orchestration - gelecek)
+- **Prefect** (Workflow orchestration - ✅ Tamamlandı)
 
 ### ☁️ Cloud & DevOps
 - **Google Cloud Platform** (BigQuery, Cloud Run)
@@ -283,12 +307,15 @@ ORDER BY month;
 ### 📊 Analytics & BI
 - **Tableau** (Dashboard - ✅ Tamamlandı)
 - **PowerBI** (Dashboard - ✅ Tamamlandı)
-- **scikit-learn** (ML modelleri - gelecek)
+- **scikit-learn** (ML modelleri - ✅ Tamamlandı)
+- **XGBoost** (Gradient boosting - ✅ Tamamlandı)
+- **matplotlib & seaborn** (Görselleştirme - ✅ Tamamlandı)
 
 ### 🤖 AI & LLM
-- **LangChain** (RAG framework - gelecek)
-- **OpenAI API** (LLM - gelecek)
-- **ChromaDB** (Vector database - gelecek)
+- **LangChain** (RAG framework - ✅ Tamamlandı)
+- **OpenAI API / Ollama** (LLM - ✅ Tamamlandı)
+- **Streamlit** (Chatbot UI - ✅ Tamamlandı)
+- **BigQuery** (Vector storage için veri kaynağı - ✅ Tamamlandı)
 
 ---
 
@@ -301,19 +328,26 @@ ORDER BY month;
 - [x] Veri kalitesi kontrolleri
 - [x] Temel analitik sorgular
 
-### 🚧 Devam Eden (Hafta 2)
-- [ ] Prefect ile ETL orchestration
-- [ ] Machine Learning modelleri
-- [ ] Churn prediction algoritması
-- [ ] Customer segmentation (KMeans)
+### ✅ Tamamlanan (Hafta 2)
+- [x] Prefect ile ETL orchestration
+- [x] Machine Learning modelleri (Random Forest, XGBoost)
+- [x] Churn prediction algoritması
+- [x] Customer segmentation (KMeans)
+- [x] CLTV (Customer Lifetime Value) analizi
+- [x] Segment analizi ve raporlama
 
-### 📋 Planlanan (Hafta 3-4)
-- [ ] RAG tabanlı AI Chatbot
-- [x] PowerBI dashboard'ları (✅ Tamamlandı)
-- [x] Tableau Public dashboard'ları (✅ Tamamlandı)
+### ✅ Tamamlanan (Hafta 3-4)
+- [x] RAG tabanlı AI Chatbot (Streamlit UI)
+- [x] PowerBI dashboard'ları
+- [x] Tableau Public dashboard'ları
+- [x] Analytics modülleri ve raporlar
+- [x] Model eğitimi ve tahmin sistemi
+
+### 📋 Planlanan
 - [ ] CI/CD pipeline (GitHub Actions)
 - [ ] Google Cloud Run deployment
 - [ ] API endpoints (FastAPI)
+- [ ] Model monitoring ve retraining pipeline
 
 ---
 
